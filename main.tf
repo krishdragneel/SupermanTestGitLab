@@ -82,20 +82,20 @@ resource "aws_instance" "web" {
   connection {
     type        = "ssh"
     user        = "ubuntu"
-    private_key = file("${path.module}/id_rsa")
+    private_key = "${path.module}/id_rsa"
     host        = self.public_ip
   }
 
 
   provisioner "file" {
-    content     = file("${path.module}/script.sh")
+    source     = "${path.module}/script.sh"
     destination = "/tmp/script.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/script.sh",
-      "sudo /tmp/script.sh"
+      "sudo chmod +x /tmp/script.sh",
+      "/tmp/script.sh"
     ]
   }
 
