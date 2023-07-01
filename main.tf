@@ -88,14 +88,14 @@ resource "aws_instance" "web" {
 
 
   provisioner "file" {
-    source     = "${path.module}/script.sh"
-    destination = "/tmp/script.sh"
+    source     = "${path.module}/test.sh"
+    destination = "/tmp/test.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "sudo chmod +x /tmp/script.sh",
-      "/tmp/script.sh"
+      "sudo chmod +x /tmp/test.sh",
+      "/tmp/test.sh"
     ]
   }
 
