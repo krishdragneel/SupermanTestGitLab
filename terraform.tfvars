@@ -1,6 +1,6 @@
 region                  = "us-east-1"
-access_key              = "AKIA2WFDHFA5C5FJLDNS"
-secret_key              = "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"
+access_key              = "AKIA2WFDHFA5MPLRHN2V"
+secret_key              = "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"
 ami_owners              = ["099720109477"]
 ami_name                = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
 ami_virtualization_type = ["hvm"]
