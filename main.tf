@@ -94,8 +94,8 @@ resource "aws_instance" "web" {
 
   provisioner "remote-exec" {
     inline = [
-      #"while [ ! -f /var/lib/cloud/instance/boot-finished ]; do sleep 1; done",
-      #"echo 'Cloud-init finished'",
+      "while [ ! -f /var/lib/cloud/instance/boot-finished ]; do sleep 1; done",
+      "echo 'Cloud-init finished'",
       "sudo chmod +x /tmp/test.sh",
       "/tmp/test.sh"
     ]
